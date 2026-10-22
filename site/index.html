@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JupyterLab Architecture Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <p>SOFTWARE ARCHITECTURE PROJECT</p>
+    <h1>JupyterLab Architecture Explorer</h1>
+    <p>Explore a simplified model of JupyterLab's modular client-server architecture.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>1. Explore the architecture</h2>
+      <p>Select a component to learn about its proposed responsibility.</p>
+
+      <div class="diagram">
+        <button data-component="browser">Browser Interface</button>
+        <div class="arrow">↕</div>
+        <button data-component="server">Jupyter Server</button>
+        <div class="branches">
+          <button data-component="notebook">Notebook Documents</button>
+          <button data-component="kernel">Computational Kernel</button>
+        </div>
+        <button data-component="extensions">Extension System</button>
+      </div>
+
+      <article class="detail" aria-live="polite">
+        <h3 id="detail-name">Browser Interface</h3>
+        <p id="detail-category">Presentation</p>
+        <p id="detail-responsibility">The browser provides the interactive user interface.</p>
+        <a id="detail-source" href="https://github.com/jupyterlab/jupyterlab"
+           target="_blank" rel="noopener noreferrer">View source project</a>
+      </article>
+    </section>
+
+    <section>
+      <h2>2. Typical workflow</h2>
+      <ol>
+        <li>The user interacts with the browser interface.</li>
+        <li>The interface communicates with server-side services.</li>
+        <li>A code cell is sent for execution.</li>
+        <li>A computational kernel runs the code and returns results.</li>
+        <li>The results can be displayed in the notebook.</li>
+      </ol>
+      <p class="note">This is a simplified conceptual workflow, not a live request trace.</p>
+    </section>
+
+    <section>
+      <h2>3. Architecture verification</h2>
+      <p>Use the official documentation and repositories to verify each architectural claim.</p>
+      <ul>
+        <li><a href="https://jupyterlab.readthedocs.io/" target="_blank" rel="noopener noreferrer">JupyterLab documentation</a></li>
+        <li><a href="https://github.com/jupyter-server/jupyter_server" target="_blank" rel="noopener noreferrer">Jupyter Server repository</a></li>
+        <li><a href="https://github.com/jupyter/nbformat" target="_blank" rel="noopener noreferrer">Notebook format repository</a></li>
+        <li><a href="https://github.com/ipython/ipykernel" target="_blank" rel="noopener noreferrer">IPython kernel repository</a></li>
+      </ul>
+      <p class="note">The component descriptions are initial hypotheses until you verify them.</p>
+    </section>
+
+    <section>
+      <h2>4. Quality assurance checklist</h2>
+      <p>Perform each test before marking it as passed.</p>
+      <div id="qa-list"></div>
+      <p id="qa-progress" aria-live="polite">0 of 6 checks passed.</p>
+      <button id="reset-qa" type="button">Reset checklist</button>
+    </section>
+  </main>
+
+  <footer>
+    JupyterLab Architecture Explorer · Educational prototype
+  </footer>
+</body>
+</html>
